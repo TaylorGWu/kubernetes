@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: database-slave
+    labels:
+        name: database-slave
+spec:
+    selector: 
+        name: database-slave-replication-controller
+    type: NodePort
+    ports:
+    #- port: 3306
+    #  nodePort: 32000
+    #  name: mysql
+    - port: 6379
+      nodePort: 32003
+      name: redis-slave

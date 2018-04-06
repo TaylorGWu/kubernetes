@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: database-master
+    labels:
+        name: database-master
+spec:
+    containers:
+    - name: mysql-master
+      image: mysql
+      ports:
+      - containerPort: 3306
+    - name: redis-master
+      image: redis
+      ports:
+      - containerPort: 6379
